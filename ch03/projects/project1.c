@@ -1,0 +1,20 @@
+/*
+ * project1.c
+ * Accepts a date; displays date as yyyymmdd
+*/
+
+
+#include <stdio.h>
+
+
+int main(void)
+{
+    int month, day, year;
+    printf("Enter month, day, and year as mm/dd/year: ");
+    scanf("%d/%d/%d", &month, &day, &year);
+    printf("You entered the date %d%.2d%.2d", year, month, day);
+
+    return 0;
+
+       
+}
