@@ -13,5 +13,12 @@
 
 int main(void)
 {
+    int first_digit, second_digit, third_digit;
     
+    printf("Enter a three digit number: ");
+    scanf("%1d%1d%1d", &third_digit, &second_digit, &first_digit);
+    
+    printf("The number reversed: %d%d%d\n", first_digit, second_digit, third_digit);
+
+    return 0;
 }
