@@ -12,13 +12,13 @@
 
 int main(void)
 {
-    float number;
-    float max = 0.00f;
+    double number;
+    double max = 0.00f;
 
     do 
     {
         printf("Enter a number: ");
-        scanf("%f", &number);
+        scanf("%lf", &number);
         if (number > max)
             max = number;
     }   while(number > 0);
