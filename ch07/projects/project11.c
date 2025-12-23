@@ -20,7 +20,10 @@ int main(void)
 
     while ((ch = getchar()) != '\n')
         if (ch == ' ')
-            ch = getchar();
+        {
+             continue;
+        }     
+               
         else
             printf("%c", ch);
     printf("%c %c.", ',', first_initial);
@@ -28,6 +31,3 @@ int main(void)
     return 0;
 
 }
-   
-        
-
