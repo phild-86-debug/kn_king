@@ -15,7 +15,7 @@ int main()
     int arr_ints[MAX][MAX];
     int row, column, row_sum = 0, column_sum = 0;
 
-
+    // enter data
     for (row = 0; row < MAX; row++){
         printf("Enter row %d: ", row + 1);
         for (column = 0; column < MAX; column++)
@@ -23,26 +23,8 @@ int main()
             scanf("%d", &arr_ints[row][column]);
         }
     }
-
-
-/*     for (row = 0; row < MAX; row++)
-    {
-        for (column = 0; column < MAX; column++)
-            scanf("%d", &arr_ints[row][column]);
-    }  */
-
-    // remove 
-
-    for (int i = 0; i < MAX; i++){
-        for (int j = 0; j < MAX; j++)
-        {
-            printf("%d ", arr_ints[i][j]);
-        }
-        printf("\n");
-    }
-    printf("Row Totals: ");
-    
     // get row totals
+    printf("Row Totals: ");
 
     for (row = 0; row < MAX; row ++)
     {
@@ -70,9 +52,6 @@ int main()
     }
 
     printf("\n");
-
-
-
 
     return 0;
 }
