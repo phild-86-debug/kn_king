@@ -12,7 +12,7 @@
 
  int main(void)
  {
-    // enter sentence, place in char array and print.
+    
     char message[200] = {0}, ch;
     printf("Enter message: ");
     int i = 0;
