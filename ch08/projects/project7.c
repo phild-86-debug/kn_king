@@ -13,7 +13,7 @@
 int main()
 {
     int arr_ints[MAX][MAX];
-    int row, column, row_sum = 0;
+    int row, column, row_sum = 0, column_sum = 0;
 
 
     for (row = 0; row < MAX; row++){
@@ -57,7 +57,20 @@ int main()
     }
 
     // get column totals:
-    
+    printf("\nColumn Totals: ");
+
+    for (column = 0; column < MAX; column++)
+    {
+        for (row = 0; row < MAX; row++)
+        {
+            column_sum += arr_ints[row][column];
+        }
+        printf("%d ", column_sum);
+        column_sum = 0;
+    }
+
+    printf("\n");
+
 
 
 
