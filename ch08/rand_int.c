@@ -19,6 +19,12 @@ int main(void)
         int r = rand() % n;
         printf("%d\n", r);
     }
+
+    // Random number in a range function:
+
+/*     int random_in_range(int min, int max) {
+    return min + rand() % (max - min + 1);
+} */
     return 0;
 }
 
