@@ -19,7 +19,9 @@ int main(void)
     int i = 0, j = 0;
     char ch = 'A';
     int rand_int;
-    bool up = 1, down = 1, left = 1, right = 1;
+    bool up, down, left, right;
+
+   
    
     srand(time(NULL));
 
@@ -35,17 +37,24 @@ int main(void)
     ch++;
     while(1)
     {
+
+        up = 1;
+        down = 1;
+        left = 1;
+        right = 1;
         
         
         
         if(ch >'Z')
             break;
+            
 
         rand_int = rand() % 4;
 
         switch(rand_int)
         {
             case 0: /* up*/
+                up = 1;
                 if(i-1 >= 0 && matrix[i-1][j] == '.')
                 {
                     i--;
@@ -56,8 +65,9 @@ int main(void)
                 }
                 else
                     up = 0;
-                    break;
+                    
             case 1: /* down*/
+                down = 1;
                 if(i+1 <= 9 && matrix[i+1][j] == '.')
                 {
 
@@ -70,8 +80,9 @@ int main(void)
                 }
                 else
                     down = 0;
-                    break;
+                    
             case 2: /*left*/
+                left = 1;
                 if(j-1 >= 0 && matrix[i][j-1] == '.')
                 {
                     left = 1;
@@ -83,8 +94,9 @@ int main(void)
                 }
                 else
                     left = 0;
-                    break;
+                    
             case 3: /*right*/
+                right = 1;
                 if(j+1 <= 9 && matrix[i][j+1] == '.')
                 {
                     right = 1;
@@ -96,7 +108,7 @@ int main(void)
                 }
                 else
                     right = 0;
-                    break;
+                
         }
         if (up == 0 && down == 0 && left == 0 && right == 0)
             break;
