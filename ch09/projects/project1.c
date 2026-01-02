@@ -1,10 +1,11 @@
 /* project1.c
  * 01/02/2025
  * selection_sort
- * 
-
-
-*/
+ * tasks: 1) must search the array to find the largest element, then move it 
+ *           to the last position in the array. 
+ *        2) function must call itself recursively to sort the first n-1
+ *           elements of the array. 
+ */
 
 
 #include <stdio.h>
