@@ -35,7 +35,6 @@ int main()
 
     return 0;
 
-
 }
 
 
@@ -44,13 +43,12 @@ void selection_sort(int a[], int n){
     if(n == 1)
         return;
     int largest_value = a[0], ind= 0;
+
     for (int i = 0; i < n; i++){
         if (a[i] > largest_value){
              largest_value = a[i];
-             ind = i;
-            
-        }
-           
+             ind = i;   
+        }      
     }
 
     int temp = a[n-1];
@@ -58,6 +56,4 @@ void selection_sort(int a[], int n){
     a[ind] = temp;
 
     selection_sort(a, n-1);
-
-
 }
