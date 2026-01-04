@@ -11,14 +11,16 @@
     int letters[26] = {0};
     char ch;
     printf("Enter first word: ");
-    while((tolower(ch = getchar()))!= '\n'){
+    while((ch = getchar()) != '\n'){
+        ch = tolower(ch);
         if(isalpha(ch)){
 
             letters[ch - 'a'] ++;
         }
     }
     printf("Enter second word: ");
-     while((tolower(ch = getchar()))!= '\n'){
+     while((ch = getchar()) != '\n') {
+        ch = tolower(ch);
         if(isalpha(ch)){
 
             letters[ch - 'a'] --;
