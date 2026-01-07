@@ -31,7 +31,7 @@
         12 : depart_hour;
 
     printf("Closest departure time is %d:%2.2d %c.m.", depart_hour, depart_mins, time_stamp);
-
+    printf("\n");
 
     return 0;
 
