@@ -30,10 +30,9 @@ int main(void){
 
 
 float compute_GPA(char grades[], int n){
-    int average, grade_total = 0;
+    int grade_total = 0;
     for (int i = 0; i < n; i++){
-        grades[i] = toupper(grades[i]);
-        switch(grades[i])
+        switch(toupper(grades[i]))
         {
             case 'A':
                 grade_total += 4;
