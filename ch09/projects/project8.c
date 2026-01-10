@@ -64,12 +64,11 @@ bool play_game(void){
             printf("You lose!");
             return false;
         }
-        if (sum == point)
-            break;
-
+        if (sum == point){
+            printf("You won!");
+            return true;
+        }
     }
-    printf("You won!");
-    return true;
 }
 
 
