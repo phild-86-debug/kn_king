@@ -14,6 +14,7 @@ void read_cards(int hand[][2]);
 bool duplicate_card(int rank, int suit, int hand[NUM_CARDS][2], int cards_read);
 void analyze_hand(int hand[][2]);
 void selection_sort(int[], int n);
+void print_result(void);
 
 /****************************************************************
  * main: Calls read cards, analyze_hand and print_result        *
@@ -22,8 +23,10 @@ void selection_sort(int[], int n);
 int main(void)
 {
     int hand[5][2];
+
     read_cards(hand);
     analyze_hand(hand);
+    print_result();
 
     return 0;
 }
@@ -39,7 +42,7 @@ int main(void)
 void analyze_hand(int hand[][2])
 {
    int num_consec = 0;
-   int rank, suit;
+   int rank, suit, matches = 0;
    int flag = 1;
    
    straight = false;
@@ -60,7 +63,7 @@ void analyze_hand(int hand[][2])
         flush = true;
     printf("Flush is: %d\n", flush);
 
-    // check for straight
+    // reduce hand to a one dimensional array- destination
     int destination[NUM_CARDS];
     for (int i = 0; i < NUM_CARDS; i++){
         destination[i] = hand[i][0];
@@ -69,9 +72,33 @@ void analyze_hand(int hand[][2])
     // calls selection sort on destination
     selection_sort(destination, NUM_CARDS);
 
-    for (int i = 0; i < 5; i++){
-        printf("%d ", destination[i]);
+    // checks for straight
+    straight = true;
+    for(int i = 0; i < NUM_CARDS - 1; i++){
+        if (destination[i + 1] != destination[i] + 1)
+            straight = false;
     }
+
+    printf("straight = %d", straight);
+
+    // check for 4-of-a-kind, 3-of-a-kind and pairs
+    for (int i = 0; i < NUM_CARDS -1; i++){
+        while (destination[i] == destination[i + 1]){
+            matches++;
+            i++;
+        }
+        
+        if (matches == 1)
+            pairs++;
+        if (matches == 2)
+            three = true;
+        if (matches == 3)
+            four == true;
+        matches = 0;
+    
+
+    }
+    printf("matches = %d", matches);
 }
 
 void selection_sort(int arr[], int n){
@@ -87,6 +114,28 @@ void selection_sort(int arr[], int n){
         arr[i] = temp;
     }
 }
+
+/***********************************************************8****
+ * print_result: Prints the classification of the hand, based   *
+ * on the values of the external variables straight, flush,     *
+ * four, three, and pairs.                                      *
+ ****************************************************************/
+void print_result(void)
+{
+    if (straight && flush)  printf("straight flush");
+    else if (four)          printf("Four of a kind");
+    else if (three && pairs == 1)  printf("Full house");
+    else if (flush)         printf("Flush");
+    else if (straight)      printf("Straight");
+    else if (three)         printf("Three of a kind");
+    else if (pairs == 2)    printf("Two pairs");
+    else if (pairs == 1)    printf("Pair");
+    else                    printf("High card");
+
+    printf("\n\n");
+}
+
+    
 
 
 
