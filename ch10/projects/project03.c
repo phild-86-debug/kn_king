@@ -10,7 +10,7 @@
 bool straight, flush, four, three;
 int pairs; /* can be 0, 1, or 2*/
 
-void read_cards(int hand[][2]);
+void read_cards(int hand[5][2]);
 bool duplicate_card(int rank, int suit, int hand[NUM_CARDS][2], int cards_read);
 void analyze_hand(int hand[][2]);
 void selection_sort(int[], int n);
@@ -41,8 +41,7 @@ int main(void)
  ****************************************************************/
 void analyze_hand(int hand[][2])
 {
-    int num_consec = 0;
-    int rank, suit, matches = 0;
+    int suit, matches = 0;
     int flag = 1;
 
     straight = false;
