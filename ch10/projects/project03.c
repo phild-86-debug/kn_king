@@ -24,11 +24,12 @@ int main(void)
 {
     int hand[5][2];
 
-    read_cards(hand);
-    analyze_hand(hand);
-    print_result();
-
-    return 0;
+    for (;;)
+    {
+        read_cards(hand);
+        analyze_hand(hand);
+        print_result();
+    }
 }
 
 /****************************************************************
@@ -83,7 +84,7 @@ void analyze_hand(int hand[][2])
     // check for 4-of-a-kind, 3-of-a-kind and pairs
     for (int i = 0; i < NUM_CARDS - 1; i++)
     {
-        while (destination[i] == destination[i + 1])
+        while (destination[i] == destination[i + 1] && i < NUM_CARDS -1)
         {
             matches++;
             i++;
